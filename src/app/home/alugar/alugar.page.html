@@ -12,26 +12,6 @@
     <ion-card *ngFor="let imovel of imoveis" button (click)="showDetails(imovel)">
       <img [src]="imovel.img" alt="">
       <ion-card-content>
-        <ion-row class="ion-margin-bottom">
-          <ion-col size="auto" class="ion-no-padding">
-            <ion-button fill="clear" color="danger" (click)="imovel.like = !imovel.like">
-              <ion-icon [class.jump-animation]="imovel.like" slot="icon-only"
-                [name]="imovel.like ? 'heart' : 'heart-outline'">
-              </ion-icon>
-            </ion-button>
-          </ion-col>
-          <ion-col size="auto" class="ion-no-padding">
-            <ion-button fill="clear">
-              <ion-icon slot="icon-only" name="chatbubble"></ion-icon>
-            </ion-button>
-          </ion-col>
-          <ion-col size="auto" class="ion-no-padding" style="margin-left: auto">
-            <ion-button fill="clear">
-              <ion-icon slot="icon-only" name="bookmark"></ion-icon>
-            </ion-button>
-          </ion-col>
-        </ion-row>
-        
           <ion-row class="ion-align-items-center">
             <ion-col size="auto">
               <p> {{imovel.nome}}<br>

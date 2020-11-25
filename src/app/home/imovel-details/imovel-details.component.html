@@ -64,9 +64,19 @@
   </div>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button href={{getWhatsapp()}}>
-      <ion-icon name="logo-whatsapp"></ion-icon>
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
     </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button href={{getWhatsapp()}}>
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="favoritar()">
+        <ion-icon [name]="imovel.like ? 'heart' : 'heart-outline'" [class.jump-animation]="imovel.like" color="danger">
+        </ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  
   </ion-fab>
 
 </ion-content>

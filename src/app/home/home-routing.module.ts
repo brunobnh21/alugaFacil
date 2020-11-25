@@ -22,6 +22,10 @@ const routes: Routes = [
         loadChildren: () => import('./alugar/alugar.module').then( m => m.AlugarPageModule)
       },
       {
+        path: 'favoritos',
+        loadChildren: () => import('./favoritos/favoritos.module').then( m => m.FavoritosPageModule)
+      },
+      {
         path: 'sobre',
         loadChildren: () => import('../sobre/sobre.module').then( m => m.SobrePageModule)
       },
@@ -30,6 +34,10 @@ const routes: Routes = [
         loadChildren: () => import('../contato/contato.module').then( m => m.ContatoPageModule)
       }
     ]
+  },
+  {
+    path: 'favoritos',
+    loadChildren: () => import('./favoritos/favoritos.module').then( m => m.FavoritosPageModule)
   },
 ];
 

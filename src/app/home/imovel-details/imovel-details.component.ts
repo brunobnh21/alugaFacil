@@ -1,4 +1,4 @@
-import { Imovel } from './../../services/imovel.service';
+import { Imovel, ImovelService } from './../../services/imovel.service';
 
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -11,7 +11,7 @@ export class ImovelDetailsComponent implements OnInit {
 
   @Input() imovel: Imovel;
 
-  constructor() {
+  constructor(private imovelService: ImovelService) {
   }
 
   ngOnInit() {
@@ -33,4 +33,14 @@ export class ImovelDetailsComponent implements OnInit {
   public getMapa() {
     return 'https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x400&markers=color:red|' + this.getEndereco() + '&key=AIzaSyAVYmLs9uS6D1FLgs1vpjo4IF4ymcYfFGQ';
   }
+
+  public favoritar(){
+    if (this.imovel.like === true) {
+      this.imovel.like = false;
+    } else {
+      this.imovel.like = true;
+    }
+    this.imovelService.update(this.imovel);
+  }
+
 }

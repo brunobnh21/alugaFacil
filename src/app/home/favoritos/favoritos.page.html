@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start" defaultHref="/home"></ion-back-button>
+    <ion-title color="secondary">
+      Favoritos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let imovel of imoveis" button (click)="showDetails(imovel)">
+    <ng-container *ngIf="imovel.like">
+    <img [src]="imovel.img" alt="">
+    <ion-card-content>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="auto">
+            <p> {{imovel.nome}}<br>
+                <small>{{imovel.bairro}}</small>
+            </p>
+          </ion-col>
+          <ion-col size="auto" class="ion-no-padding" style="margin-left: auto">   
+            <ion-text color="primary">
+              <h1 class="card-valor">{{ imovel.valor | currency:'BRL' }}</h1>
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      
+    </ion-card-content>
+  </ng-container>
+  </ion-card>
+
+</ion-content>
