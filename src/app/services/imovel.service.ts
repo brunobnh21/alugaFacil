@@ -9,10 +9,11 @@ export interface Imovel {
   like: boolean;
   cep: string;
   logradouro: string;
-  numero: string;
   bairro: string;
-  cidade: string;
-  estado: string;
+  localidade: string;
+  uf: string;
+  complemento: string;
+  numero: string;
   img: string;
   m2: string;
   numeroQuarto: number;
@@ -35,8 +36,8 @@ export class ImovelService {
   }
 
   private imoveis: Imovel[] = [
-    {id: 0, nome: 'Apartamento com 2 Quartos', valor: 3000, logradouro: 'Rua Augusta', numero: '400', bairro: 'Consolação', estado: 'São Paulo',
-    cidade: 'SP', img: 'https://s2.glbimg.com/S68qSscRNuEDNZ2vavmrtyUWfA8=/512x320/smart/e.glbimg.com/og/ed/f/original/2018/12/10/apartamento-pequeno-doob-arquitetura09.jpg',
+    {id: 0, nome: 'Apartamento com 2 Quartos', valor: 3000, logradouro: 'Rua Augusta', numero: '400', bairro: 'Consolação', uf: 'São Paulo',
+    localidade: 'SP', complemento: '', img: 'https://s2.glbimg.com/S68qSscRNuEDNZ2vavmrtyUWfA8=/512x320/smart/e.glbimg.com/og/ed/f/original/2018/12/10/apartamento-pequeno-doob-arquitetura09.jpg',
     m2: '45', numeroQuarto: 2, numeroVagas: 1, cep: '04905-000', mobiliado: false, proxEstacao: true, descricao: 'Lindo apartamento com dois quartos com espaço aberto e linda sacada.', like: false,
     usuario: {id: 0, nome: 'Daniel Victor de Souza', username: 'dsouza', password: '*****', email: 'souza.dvictor@gmail.com',
     whatsapp: 5511959575401}}
@@ -61,8 +62,9 @@ export class ImovelService {
       logradouro: '',
       numero: '',
       bairro: '',
-      cidade: '',
-      estado: '',
+      localidade: '',
+      uf: '',
+      complemento: '',
       img: '',
       m2: '',
       numeroQuarto: 0,

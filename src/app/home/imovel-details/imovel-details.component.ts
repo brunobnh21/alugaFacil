@@ -19,7 +19,7 @@ export class ImovelDetailsComponent implements OnInit {
 
   public getEndereco() {
     // tslint:disable-next-line: max-line-length
-    return this.imovel.logradouro + ', ' + this.imovel.numero + ' - ' + this.imovel.bairro + ', ' + this.imovel.cidade + ' - ' + this.imovel.estado;
+    return this.imovel.logradouro + ', ' + this.imovel.numero + ' - ' + this.imovel.bairro + ', ' + this.imovel.localidade + ' - ' + this.imovel.uf;
   }
 
   public getDetalhes() {

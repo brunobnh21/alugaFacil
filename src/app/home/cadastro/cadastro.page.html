@@ -28,6 +28,11 @@
     <ion-input type="text" [(ngModel)]="imovel.cep"> </ion-input>
   </ion-item>
 
+  <ion-button expand="block" (click)="(buscaCep(imovel.cep))">
+    <ion-icon slot="start" name="save-outline"></ion-icon>
+    Salvar
+  </ion-button>
+
   <ion-item>
     <ion-label position="floating">Logadouro </ion-label>
     <ion-input type="text" [(ngModel)]="imovel.logradouro"> </ion-input>
@@ -35,12 +40,17 @@
 
   <ion-item>
     <ion-label position="floating">Cidade </ion-label>
-    <ion-input type="text" [(ngModel)]="imovel.cidade"> </ion-input>
+    <ion-input type="text" [(ngModel)]="imovel.localidade"> </ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Estado </ion-label>
-    <ion-input type="text" [(ngModel)]="imovel.estado"> </ion-input>
+    <ion-input type="text" [(ngModel)]="imovel.uf"> </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Bairro </ion-label>
+    <ion-input type="text" [(ngModel)]="imovel.bairro"> </ion-input>
   </ion-item>
 
   <ion-item>
@@ -49,8 +59,8 @@
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating">Bairro </ion-label>
-    <ion-input type="text" [(ngModel)]="imovel.bairro"> </ion-input>
+    <ion-label position="floating">Complemento </ion-label>
+    <ion-input type="text" [(ngModel)]="imovel.complemento"> </ion-input>
   </ion-item>
 
   <ion-item>
