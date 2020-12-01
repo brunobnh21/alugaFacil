@@ -1,7 +1,7 @@
 import { Imovel, ImovelService } from './../../services/imovel.service';
 
 import { Component, OnInit, Input } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { ModalController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-imovel-details',
@@ -12,7 +12,7 @@ export class ImovelDetailsComponent implements OnInit {
 
   @Input() imovel: Imovel;
 
-  constructor(private imovelService: ImovelService, private navCtrl: NavController) {
+  constructor(private imovelService: ImovelService, private modalController: ModalController) {
   }
 
   ngOnInit() {
@@ -47,10 +47,11 @@ export class ImovelDetailsComponent implements OnInit {
       this.imovel.like = true;
     }
     this.imovelService.update(this.imovel);
+    this.modalController.dismiss();
   }
 
   public voltar(){
-    this.navCtrl.back();
+    this.modalController.dismiss();
   }
 
 }
