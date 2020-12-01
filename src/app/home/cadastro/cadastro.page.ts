@@ -20,16 +20,21 @@ export class CadastroPage implements OnInit {
     this.imovel = this.imovelService.empty();
   }
 
-  async buscaCep(cep){
+  async buscaCep(cep) {
     cep.replace(/\D/g, '');
-    if (cep != null) {
-    const url = 'https://viacep.com.br/ws/' + cep + '/json/';
-    (this.http.get(url).toPromise() as Promise<Imovel>)
-        .then(res => this.imovel = res);
 
-      }  else {
-          // null
+    if (cep != null && cep !== '') {
+      const validacep = /^[0-9]{8}$/;
+
+      if (validacep.test(cep)) {
+        const url = 'https://viacep.com.br/ws/' + cep + '/json/';
+        (this.http.get(url).toPromise() as Promise<Imovel>)
+          .then(res => this.imovel = res);
+
+      } else {
+        // null
       }
+    }
   }
 
   save() {

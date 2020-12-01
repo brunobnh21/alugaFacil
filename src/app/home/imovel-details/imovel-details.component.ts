@@ -1,6 +1,7 @@
 import { Imovel, ImovelService } from './../../services/imovel.service';
 
 import { Component, OnInit, Input } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-imovel-details',
@@ -11,7 +12,7 @@ export class ImovelDetailsComponent implements OnInit {
 
   @Input() imovel: Imovel;
 
-  constructor(private imovelService: ImovelService) {
+  constructor(private imovelService: ImovelService, private navCtrl: NavController) {
   }
 
   ngOnInit() {
@@ -27,7 +28,12 @@ export class ImovelDetailsComponent implements OnInit {
   }
 
   public getWhatsapp(){
+    if (this.imovel.usuario != null && this.imovel.usuario.whatsapp != null){
     return 'https://api.whatsapp.com/send?phone=' + this.imovel.usuario.whatsapp + '&text= Olá ' + this.imovel.usuario.nome + ', teria um minuto pra falarmos sobre o' + this.imovel.nome + '?';
+    } else {
+    // tslint:disable-next-line: max-line-length
+    return 'https://api.whatsapp.com/send?phone=' + 5511959575401 + '&text= Olá Daniel, teria um minuto pra falarmos sobre o' + this.imovel.nome + '?';
+    }
   }
 
   public getMapa() {
@@ -41,6 +47,10 @@ export class ImovelDetailsComponent implements OnInit {
       this.imovel.like = true;
     }
     this.imovelService.update(this.imovel);
+  }
+
+  public voltar(){
+    this.navCtrl.back();
   }
 
 }

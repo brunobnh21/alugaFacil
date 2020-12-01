@@ -7,7 +7,6 @@
 </ion-header>
 
 <ion-content>
-    <ion-searchbar placeholder="Buscar Imóveis"></ion-searchbar>
 
     <ion-card *ngFor="let imovel of imoveis" button (click)="showDetails(imovel)">
       <img [src]="imovel.img" alt="">

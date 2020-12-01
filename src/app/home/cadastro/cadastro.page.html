@@ -8,30 +8,11 @@
 </ion-header>
 
 <ion-list>
-  <ion-item>
-    <ion-label position="floating">Nome </ion-label>
-    <ion-input type="text" [(ngModel)]="imovel.nome"> </ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="floating">Url Imagem</ion-label>
-    <ion-input type="text" [(ngModel)]="imovel.img"> </ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="floating">Valor </ion-label>
-    <ion-input type="number" [(ngModel)]="imovel.valor"> </ion-input>
-  </ion-item>
 
   <ion-item>
     <ion-label position="floating">CEP </ion-label>
-    <ion-input type="text" [(ngModel)]="imovel.cep"> </ion-input>
+    <ion-input (ionChange)="(buscaCep(imovel.cep))" type="text" [(ngModel)]="imovel.cep"> </ion-input>
   </ion-item>
-
-  <ion-button expand="block" (click)="(buscaCep(imovel.cep))">
-    <ion-icon slot="start" name="save-outline"></ion-icon>
-    Salvar
-  </ion-button>
 
   <ion-item>
     <ion-label position="floating">Logadouro </ion-label>
@@ -52,7 +33,7 @@
     <ion-label position="floating">Bairro </ion-label>
     <ion-input type="text" [(ngModel)]="imovel.bairro"> </ion-input>
   </ion-item>
-
+    
   <ion-item>
     <ion-label position="floating">Numero </ion-label>
     <ion-input type="number" [(ngModel)]="imovel.numero"> </ion-input>
@@ -61,6 +42,31 @@
   <ion-item>
     <ion-label position="floating">Complemento </ion-label>
     <ion-input type="text" [(ngModel)]="imovel.complemento"> </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Nome </ion-label>
+    <ion-input type="text" [(ngModel)]="imovel.nome"> </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Descrição </ion-label>
+    <ion-input type="text" [(ngModel)]="imovel.descricao"> </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Url Imagem</ion-label>
+    <ion-input type="text" [(ngModel)]="imovel.img"> </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Valor </ion-label>
+    <ion-input type="number" [(ngModel)]="imovel.valor"> </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Próximo a Estação? </ion-label>
+    <ion-checkbox [(ngModel)]="imovel.proxEstacao" type="checkbox"></ion-checkbox>
   </ion-item>
 
   <ion-item>

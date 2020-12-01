@@ -35,13 +35,7 @@ export class ImovelService {
     this.loadData();
   }
 
-  private imoveis: Imovel[] = [
-    {id: 0, nome: 'Apartamento com 2 Quartos', valor: 3000, logradouro: 'Rua Augusta', numero: '400', bairro: 'Consolação', uf: 'São Paulo',
-    localidade: 'SP', complemento: '', img: 'https://s2.glbimg.com/S68qSscRNuEDNZ2vavmrtyUWfA8=/512x320/smart/e.glbimg.com/og/ed/f/original/2018/12/10/apartamento-pequeno-doob-arquitetura09.jpg',
-    m2: '45', numeroQuarto: 2, numeroVagas: 1, cep: '04905-000', mobiliado: false, proxEstacao: true, descricao: 'Lindo apartamento com dois quartos com espaço aberto e linda sacada.', like: false,
-    usuario: {id: 0, nome: 'Daniel Victor de Souza', username: 'dsouza', password: '*****', email: 'souza.dvictor@gmail.com',
-    whatsapp: 5511959575401}}
-  ];
+  private imoveis: Imovel[] = [];
 
   private async loadData() {
     const loadedImoveis = await this.storage.get('imoveis') as Imovel[];
